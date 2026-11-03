@@ -19,4 +19,5 @@ with tempfile.TemporaryDirectory() as tmp:
             self.assertEqual(s["recent_offers"][0]["result_position"],1)
         def test_url_validation(self):
             with self.assertRaises(ValueError):host.handle({"action":"record_search","url":"https://example.com/jobs/search/"})
+if __name__ == '__main__':
     unittest.main()
