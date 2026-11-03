@@ -1,0 +1,8 @@
+backend/native_host_manifest.json
+backend/jobhunter_host.cmd
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+config.json
+__pycache__/
+*.pyc
