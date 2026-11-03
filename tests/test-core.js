@@ -1,0 +1,16 @@
+const assert=require('node:assert/strict');const C=require('../core.js');
+assert(C.isLinkedInJobUrl('https://www.linkedin.com/jobs/view/123456/?trk=abc'));
+assert(!C.isLinkedInJobUrl('https://www.linkedin.com.evil.net/jobs/view/1'));
+assert(!C.isLinkedInJobUrl('http://www.linkedin.com/jobs/view/1'));
+assert(!C.isLinkedInJobUrl('https://www.linkedin.com/in/andres'));
+assert.equal(C.canonicalUrl('https://www.linkedin.com/jobs/view/cargo-123456/?trk=abc'),'https://www.linkedin.com/jobs/view/123456/');
+const search=C.searchUrl({profile:'helpdesk',location:'Chile',remote:true,entry:true,age:'r604800'});
+assert(search.startsWith('https://www.linkedin.com/jobs/search/'));assert(search.includes('f_WT=2'));assert(search.includes('f_TPR=r604800'));assert(search.includes('f_E=2%2C3'));
+const good=C.score({title:'Soporte técnico nivel 1 Windows',description:'Windows, redes, RDP, cPanel, WordPress, SQL',mode:'remoto'});
+const bad=C.score({title:'Senior Staff Engineer',description:'Rust, Kubernetes, English C1',mode:'presencial'});
+assert(good.value>bad.value);assert(good.matched.includes('windows'));assert(bad.senior);assert(bad.oral);
+const csv=C.toCsv([{title:'=HYPERLINK("http://evil")',company:'test',url:'https://www.linkedin.com/jobs/view/1/',description:'a,b\n"c"'}]);assert(csv.includes('"\'=HYPERLINK'));assert(csv.includes('a,b'));
+assert(C.prompt('cv',C.DEFAULT_PROFILE,{title:'Help Desk',company:'X',description:'Windows',mode:'remoto'}).includes('No inventes'));
+assert.throws(()=>C.validateImport({offers:[{title:'x',company:'x',description:'x',url:'https://example.com'}]}));
+assert.equal(C.validateImport({offers:[]}).offers.length,0);
+console.log('OK: 13 grupos de verificaciones funcionales.');
