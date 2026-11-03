@@ -16,4 +16,6 @@ jobs:
         with:
           node-version: '22'
       - run: python -m unittest discover -s tests -p 'test_native.py'
+      - run: node --check community.js
+      - run: python -m py_compile backend/native_host.py backend/install_windows.py
       - run: node tests/test-core.js
