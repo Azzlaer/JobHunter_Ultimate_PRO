@@ -1,3 +1,13 @@
+# JobHunter Community Enterprise PRO v6.0 — LinkedIn Edition
+
+**Integración Comunitaria:** registro local de búsquedas en SQLite, métricas por orden, almacenamiento de ofertas agregadas manualmente y envío opcional al webhook Discord, sin scraping ni credenciales de LinkedIn.
+
+**Instalación y seguridad:** consulta [COMMUNITY_v6.md](COMMUNITY_v6.md) y [backend/INSTALAR_WINDOWS.bat](backend/INSTALAR_WINDOWS.bat).
+
+**Aviso de compatibilidad:** este repositorio contenía los archivos de v3.0 cuando comenzó la integración; el módulo Comunidad se añadió sin eliminar las funciones que ya existían en `main`. La distribución ZIP de v5.0 contiene módulos adicionales que aún requieren portarse explícitamente al repositorio.
+
+---
+
 # Azzlaer JobHunter Enterprise PRO v3.0 — LinkedIn Edition
 
 Extensión Chrome Manifest V3, en español, centrada exclusivamente en búsquedas laborales de LinkedIn. Interfaz Corporate Blue con panel lateral.

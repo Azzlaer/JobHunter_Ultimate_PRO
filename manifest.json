@@ -1,13 +1,32 @@
 {
   "manifest_version": 3,
-  "name": "Azzlaer JobHunter Enterprise PRO — LinkedIn",
+  "name": "Azzlaer JobHunter Community Enterprise — LinkedIn",
   "short_name": "JobHunter PRO",
-  "version": "3.0.0",
-  "description": "Gestor personal de búsqueda laboral para LinkedIn: filtros, puntuación local, CV, IA opcional por prompts y exportación.",
+  "version": "6.0.0",
+  "description": "JobHunter LinkedIn con SQLite, estadísticas reales y publicación opt-in en Discord.",
   "minimum_chrome_version": "116",
-  "permissions": ["storage", "sidePanel", "tabs"],
-  "background": {"service_worker": "background.js"},
-  "side_panel": {"default_path": "panel.html"},
-  "action": {"default_title": "Abrir JobHunter Enterprise PRO", "default_icon": {"16":"icons/16.png", "48":"icons/48.png"}},
-  "icons": {"16":"icons/16.png", "48":"icons/48.png", "128":"icons/128.png"}
+  "permissions": [
+    "storage",
+    "sidePanel",
+    "tabs",
+    "nativeMessaging"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "action": {
+    "default_title": "Abrir JobHunter Enterprise PRO",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  }
 }
